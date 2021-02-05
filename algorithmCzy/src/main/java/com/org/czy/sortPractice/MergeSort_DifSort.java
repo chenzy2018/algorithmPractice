@@ -1,4 +1,4 @@
-package com.org.czy.sortPractice;
+package main.java.com.org.czy.sortPractice;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.org.czy.ThreadPractice;
+package main.java.com.org.czy.ThreadPractice;
 
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;

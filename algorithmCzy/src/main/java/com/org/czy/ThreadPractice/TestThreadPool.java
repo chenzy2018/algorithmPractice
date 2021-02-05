@@ -1,10 +1,13 @@
-package com.org.czy.ThreadPractice;
+package main.java.com.org.czy.ThreadPractice;
 
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * 测试线程池
+ */
 public class TestThreadPool {
 
     private int corePoolSize ;

@@ -1,4 +1,4 @@
-package com.org.czy.sortPractice;
+package main.java.com.org.czy.sortPractice;
 
 /**
  * 归并排序

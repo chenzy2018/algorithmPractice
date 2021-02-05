@@ -1,4 +1,4 @@
-package com.org.czy.Utils;
+package main.java.com.org.czy.Utils;
 
 public class SortUtil {
 
