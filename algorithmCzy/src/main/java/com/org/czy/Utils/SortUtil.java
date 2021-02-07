@@ -1,5 +1,8 @@
 package main.java.com.org.czy.Utils;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 public class SortUtil {
 
     /**
@@ -7,13 +10,13 @@ public class SortUtil {
      */
     public static void change(int[] arr, int i, int j){
 
-        //int tmp = arr[i];
-        //arr[i] = arr[j];
-        //arr[j] = tmp;
+        int tmp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = tmp;
 
-        arr[i] = arr[i] ^ arr[j];
-        arr[j] = arr[i] ^ arr[j];
-        arr[i] = arr[i] ^ arr[j];
+//        arr[i] = arr[i] ^ arr[j];
+//        arr[j] = arr[i] ^ arr[j];
+//        arr[i] = arr[i] ^ arr[j];
     }
 
     /**
@@ -25,7 +28,9 @@ public class SortUtil {
         int[] arr = new int[(int)((size+1)*Math.random())];
         for(int i = 0; i < arr.length;i++){
             //生成基于value的随机数字，包含正负数
-            arr[i] = (int) ((value+1)*Math.random()) - (int) (value*Math.random());
+            do{
+                arr[i] = Math.abs(((int) ((value+1)*Math.random()) - (int) (value*Math.random())));
+            }while(arr[i]==0);
         }
         return arr;
     }
@@ -45,4 +50,22 @@ public class SortUtil {
         return res;
     }
 
+    /**
+     * 排序绝对正确的方法
+     */
+    public static void rightSort(int[] arr){
+        Arrays.sort(arr);
+    }
+
+    /**
+     * 数组比较方法
+     */
+    public static boolean isEquals(int[] arr, int[] arr1){
+        for(int i = 0; i< arr.length; i++){
+            if(arr[i] != arr1[i]){
+                return false;
+            }
+        }
+        return true;
+    }
 }
