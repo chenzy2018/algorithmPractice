@@ -4,6 +4,7 @@ import main.java.com.org.czy.Utils.SortUtil;
 
 /**
  * 快速排序
+ * O(n*logn) 空间复杂度O(logn)
  */
 public class QuickSort {
 
@@ -15,6 +16,7 @@ public class QuickSort {
     public static void quickSort(int[] arr, int l, int r){
         //只有左边界小于有边界才是有效
         if(l < r){
+            SortUtil.change(arr, l + (int)(Math.random()*(r-l+1)), r);//随机选取一个数字放到最后，作为快排的比对数
             int[] p = partition(arr, l, r);
             quickSort(arr, l, p[0]-1);
             quickSort(arr, p[1]+1, r);
@@ -35,7 +37,7 @@ public class QuickSort {
                 l++;
             }
         }
-        SortUtil.change(arr, j, r);
+        SortUtil.change(arr, j, r);//交换最后一个用于比较的数据
         return new int[]{i+1, j};
     }
     public static void main(String[] args) {
