@@ -3,7 +3,7 @@ package main.java.com.org.czy.sortPractice;
 import main.java.com.org.czy.Utils.SortUtil;
 
 /**
- * 堆排序
+ * 堆排序  O(n*logn) 空间复杂度O(1)
  * 堆：是完全二叉树，即每一层都是从左往右，中间不能缺节点
  *      完全二叉树可以用数组模拟，当前节点i的左子树为2*i+1，右子树为2*i+2，其父节点为(i-1)/2
  * 大顶堆：完全二叉树中的任一子树(包括本身)中的最大值即为根节点。（小顶堆则是根节点未最小值）
@@ -16,7 +16,12 @@ public class HeapSort {
         for(int i : arr){
             heapInsert(arr, i );
         }
-
+        int heapSize = arr.length-1;
+        SortUtil.change(arr,0,heapSize);
+        while (heapSize>0){
+            heapify(arr,0,heapSize);
+            SortUtil.change(arr,0,--heapSize);
+        }
     }
 
     /**

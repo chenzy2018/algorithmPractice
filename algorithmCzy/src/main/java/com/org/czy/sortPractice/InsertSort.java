@@ -5,6 +5,8 @@ import main.java.com.org.czy.Utils.SortUtil;
 /**
  * 插入排序
  * 最好情况升序O(n),最坏情况降序O[n^2],取最坏情况，因此是O[n^2]
+ *
+ * 小样本量情况下插排非常快，因为常数项很小
  */
 public class InsertSort {
 

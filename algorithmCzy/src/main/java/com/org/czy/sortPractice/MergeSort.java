@@ -2,7 +2,7 @@ package main.java.com.org.czy.sortPractice;
 
 /**
  * 归并排序
- * O(nlogn)
+ * O(nlogn) 空间O(n) 可以做到O(1)，很难，内部缓存法
  */
 public class MergeSort {
 
