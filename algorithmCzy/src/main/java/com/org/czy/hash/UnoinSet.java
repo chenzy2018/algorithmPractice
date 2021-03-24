@@ -3,6 +3,7 @@ package main.java.com.org.czy.hash;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Stack;
 
 /**
  * 并查集
@@ -39,18 +40,35 @@ public class UnoinSet {
             return father;
         }
 
+        private Node findHeadUnRecur(Node node){
+            Stack<Node> stack = new Stack<Node>();
+            Node cur = node;
+            Node parent  = fatherMap.get(cur);
+            while (cur != parent){
+                stack.push(cur);
+                cur = parent;
+                parent = fatherMap.get(cur);
+            }
+            while(!stack.isEmpty()){
+                fatherMap.put(stack.pop(),parent);
+            }
+            return parent;
+        }
+
         public boolean isSameSet(Node node1, Node node2){
             return findHead(node1) == findHead(node2);
         }
 
         public void union(Node node1, Node node2){
-            Node father1 = fatherMap.get(node1);
-            Node father2 = fatherMap.get(node2);
+            if(node1 == null || node2 == null) return;
+
+            Node father1 = findHead(node1);
+            Node father2 = findHead(node2);
             if(father1 != father2){
                 int size1 = sizeMap.get(father1);
                 int size2 = sizeMap.get(father2);
 
-                if(size1 < size2){
+                if(size1 < size2){//把长度短的链变成长度长的子链
                     fatherMap.put(father1, father2);
                     sizeMap.put(father2, size1+size2);
                 }else{

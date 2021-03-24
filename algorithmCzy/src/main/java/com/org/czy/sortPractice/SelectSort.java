@@ -1,6 +1,6 @@
 package main.java.com.org.czy.sortPractice;
 
-import main.java.com.org.czy.Utils.SortUtil;
+import main.java.com.org.czy.utils.SortUtil;
 
 /**
  * 选择排序

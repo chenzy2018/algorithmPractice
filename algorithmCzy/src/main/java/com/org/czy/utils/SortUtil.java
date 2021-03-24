@@ -1,6 +1,5 @@
-package main.java.com.org.czy.Utils;
+package main.java.com.org.czy.utils;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class SortUtil {
